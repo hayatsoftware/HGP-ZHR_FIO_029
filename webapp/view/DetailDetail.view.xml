@@ -1,0 +1,56 @@
+<mvc:View controllerName="hayat.hcm.orgchart.md.controller.DetailDetail" xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:l="sap.ui.layout"
+	xmlns:smartchart="sap.ui.comp.smartchart" xmlns:sl="sap.ui.comp.navpopover" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns:c="sap.suite.ui.commons" xmlns:data="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:mvc="sap.ui.core.mvc">
+	<semantic:SemanticPage id="detailDetailPage" busy="{detailDetailView>/busy}" busyIndicatorDelay="{detailDetailView>/delay}"
+		class="sapUiNoContentPadding" showFooter="true"> 
+		<semantic:titleHeading>
+			<Title text="{Boxtxt}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<List
+			id="variantList"
+			items="{/sim_mlistSet}"
+			includeItemInSelection="true">
+			<headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="Kayıtlar" level="H2"/>
+						<ToolbarSpacer />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar>
+			<ObjectListItem
+					title="{Varname}"
+					type="DetailAndActive"
+					press="onListItemPress"
+					detailPress="handleDetailPress">
+					<firstStatus>
+						<ObjectStatus
+							text="{Hide}"
+						/>
+					</firstStatus>
+					<ObjectAttribute text="{path:'DatumCh',formatter:'.formatter.formatDate'}" />
+				</ObjectListItem>
+		</List>
+		</semantic:content>
+		<!--Semantic ShareMenu Buttons-->
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<!-- <semantic:fullScreenAction>
+			<semantic:FullScreenAction id="enterFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/endColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:fullScreenAction>
+		<semantic:exitFullScreenAction>
+			<semantic:ExitFullScreenAction id="exitFullScreen"
+				visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/endColumn/fullScreen}}" press=".toggleFullScreen"/>
+		</semantic:exitFullScreenAction> -->
+
+		<semantic:footerCustomActions>
+			<Button icon="sap-icon://add-coursebook" iconFirst="false" type="Ghost" press="._onAddVariant">
+			</Button>
+		</semantic:footerCustomActions>
+
+	</semantic:SemanticPage>
+</mvc:View>

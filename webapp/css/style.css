@@ -1,0 +1,189 @@
+html,
+body {
+  font-family: Helvetica;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#tree {
+  width: 100%;
+  height: 100%;
+}
+
+.t {
+  border: 2px solid #D9D9D9;
+  border-radius: 20px;
+}
+
+.t-img {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #BED600;
+}
+
+.t-name {
+  padding: 10px 10px 10px 30px;
+}
+
+
+.t-val {
+  padding: 10px 30px 10px 10px;
+}
+
+[data-field-name] [lbl] {
+  display: none;
+}
+
+.edit-tags {
+  display: none;
+}
+
+/*partial*/
+.node.MY rect.zana {
+  fill: #88d7ff !important;
+}
+
+/*
+.node.BY rect {
+    
+}
+*/
+
+.node.GY rect {
+  fill: #d4d4d4 !important;
+}
+
+
+
+.node.Expat rect.outer {
+  stroke: #e8ac29;
+}
+
+.node.Expat foreignObject.exp {
+  visibility: visible !important;
+}
+
+.node.Butce rect.outer {
+  stroke: #e82929;
+}
+
+/*Ula Line Coloring*/
+.node.MY.S line.zulaLine {
+  stroke: #88d7ff !important;
+}
+
+.node.S line.zulaLine {
+  stroke: #F57C00;
+}
+
+.node.O line.zulaLine {
+  stroke: #039BE5;
+}
+
+.node.P line.zulaLine {
+  stroke: #FFCA28;
+}
+
+
+
+
+/*Ula Line Coloring*/
+
+
+/*Ula-Olivia Boş Poz*/
+.node.BOS image.zolivia {
+  display: none;
+}
+
+.node.BOS clipPath.zolivia {
+  display: none;
+}
+
+.node.BOS image.zula {
+  display: none;
+}
+
+.node.BOS clipPath.zula {
+  display: none;
+}
+
+/*Ula-Olivia Boş Poz*/
+
+/*partial*/
+.node.S rect.zana {
+  fill: #F57C00;
+}
+
+.node.O rect.zana {
+  fill: #039BE5;
+}
+
+.node.P rect.zana {
+  fill: #FFCA28;
+}
+
+.node.S rect.cool {
+  fill: #ffffff !important;
+}
+
+.node.O rect.cool {
+  fill: #ffffff !important;
+}
+
+.node.P rect.cool {
+  fill: #ffffff !important;
+}
+
+.node.MY rect.cool.outer {
+  fill: #88d7ff !important;
+}
+
+.node.GY rect.cool.outer {
+  fill: #d4d4d4 !important;
+}
+
+.laptop::before {
+  font-family: SAP-icons;
+  content: "\e027";
+}
+
+
+.node.BY rect.customAna {
+  fill: #ffffff !important;
+}
+
+.node.S rect.customAna {
+  fill: #ffffff !important;
+}
+
+.node.O rect.customAna {
+  fill: #ffffff !important;
+}
+
+.node.P rect.customAna {
+  fill: #ffffff !important;
+}
+
+.node.MY rect.customAna.outer {
+  fill: #88d7ff !important;
+}
+
+.node.GY rect.customAna.outer {
+  fill: #d4d4d4 !important;
+}
+
+.node.BOS rect.cool.outer {
+  fill: #f8f298 !important;
+}
+
+.node.MY.BOS rect.cool.outer {
+  stroke: #88d7ff !important;
+}
+
+.node.GY.BOS rect.cool.outer {
+  stroke: #5e5e5e !important;
+}

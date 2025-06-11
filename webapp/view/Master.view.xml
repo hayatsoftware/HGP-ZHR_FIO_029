@@ -1,0 +1,28 @@
+<mvc:View
+	controllerName="hayat.hcm.orgchart.md.controller.Master"
+	xmlns="sap.m"
+	xmlns:semantic="sap.f.semantic"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<semantic:SemanticPage
+		id="masterPage"
+		preserveHeaderStateOnScroll="true"
+		toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title
+				id="masterPageTitle"
+				text="{masterView>/title}"
+				level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+			<Tree
+				id="list"
+				items="{path: '/'}"
+				>
+				<StandardTreeItem title="{Stext}" type="Active" press=".onSelectItem"/>
+			</Tree>
+		
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

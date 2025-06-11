@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:f="sap.ui.layout.form"
+xmlns:commons="sap.suite.ui.commons">
+	<Dialog title="{i18n>records}" id="detailDetailVariant" afterClose="onVariantDialogAfterClose">
+		<content>
+<f:SimpleForm  id="detailDetailPage" busy="{detailDetailView>/busy}" busyIndicatorDelay="{detailDetailView>/delay}"
+		class="sapUiNoContentPadding">
+		<List
+			id="variantList"
+			items="{/sim_mlistSet}"
+			includeItemInSelection="true">
+			<!-- <headerToolbar>
+				<OverflowToolbar>
+					<content>
+						<Title text="{i18n>records}" level="H2"/>
+						<ToolbarSpacer />
+					</content>
+				</OverflowToolbar>
+			</headerToolbar> -->
+			<ObjectListItem
+					title="{Varname}"
+					type="DetailAndActive"
+					press="onListItemPress"
+					detailPress="handleDetailPress">
+					<firstStatus>
+						<ObjectStatus
+							text="{Hide}"
+						/>
+					</firstStatus>
+					<ObjectAttribute text="{path:'DatumCh',formatter:'.formatter.formatDate'}" />
+				</ObjectListItem>	
+		</List>
+</f:SimpleForm>
+		</content>
+		<!-- sap.ui.core.Control -->
+		<beginButton><Button text="Yeni Varyant" iconFirst="true" type="Accept" press="._onAddVariant"/></beginButton>
+		<!-- sap.m.Button -->
+		<endButton><Button id="cancel" text="İptal" visible="true" type="Reject" iconFirst="true" press="closeVariant"/></endButton>
+		<!-- sap.m.Button -->
+		<buttons></buttons>
+		<!-- sap.m.Button -->
+	</Dialog>
+</core:FragmentDefinition>
+

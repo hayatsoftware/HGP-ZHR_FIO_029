@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "3.1"
+metadata:
+  name: hayat.hcm.orgchart.md
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          url: https://mobiltest.hayat.com.tr:443
+          client: "100"
+        credentials:
+          username: env:SAP_USER
+          password: env:SAP_PASSWORD
+        app:
+          name: ZHR_FIO_029
+          description: Organizasyon Şeması
+          package: ZHR
+          transport: HGDK902304
+        exclude:
+          - /test/

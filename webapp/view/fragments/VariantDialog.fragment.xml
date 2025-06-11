@@ -1,0 +1,44 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:f="sap.ui.layout.form"
+xmlns:commons="sap.suite.ui.commons"
+id="variantFragment">
+  <Dialog id="newCardText" title="{i18n>newCard}" afterClose="onVariantDialogAfterClose"  contentHeight="13rem">
+	 <content>
+           <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+      <f:content>
+                <Label text="{i18n>cardName}"/>
+		        <VBox>
+                  <Input id="Varname" value="{path:'variantDialogModel>/Varname'}" maxLength="100"/>
+                </VBox>
+		  	    <Label text="Gizli"/>
+       		    <Switch class="sapUiSmallMarginEnd" state="{= ${variantDialogModel>/Hide} === 'X' ? true : false }"> </Switch>
+      </f:content>
+		   </f:SimpleForm>
+    </content>
+		<!-- sap.ui.core.Control -->
+		<beginButton><Button id="save" text="Kaydet" type="Accept" visible="true" press="._handleVariantSavePress"/></beginButton>
+		<!-- sap.m.Button -->
+		<endButton><Button id="cancel" text="İptal" visible="true" press="._handleVariantCancelPress"/></endButton>
+		<!-- sap.m.Button -->
+		<buttons></buttons>
+		<!-- sap.m.Button -->
+	</Dialog>
+</core:FragmentDefinition>
+
+			<!-- <f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+				<f:content>
+					<Label text="Kayıt Adı"/>
+					<Input id="Varname" value="{path:'variantDialogModel>/Varname'}" maxLength="100"/>
+					<Label text="Gizli"/>
+					<Switch state="{= ${variantDialogModel>/Hide} === 'X' ? true : false }">
+					</Switch>
+				</f:content>
+			</f:SimpleForm> -->
