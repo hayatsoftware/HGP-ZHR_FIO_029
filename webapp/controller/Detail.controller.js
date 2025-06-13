@@ -97,6 +97,9 @@ sap.ui.define([
 
       this.IFStaj = '';
       this.IFMerch = '';
+      this.IF24Cancel = '';
+      this.IF25Cancel = '';
+      this.IFOnHold = '';
       this.IFMt = '';
       this.IFAd1 = '';
       this.IFAd2 = '';
@@ -179,6 +182,21 @@ sap.ui.define([
           {
             "key": "IFBosp",
             "text": this.getResourceBundle().getText("vacantpoisiton"),
+            "group": this.getResourceBundle().getText("position")
+          },
+          {
+            "key": "IF24Cancel",
+            "text": this.getResourceBundle().getText("cancel2024"),
+            "group": this.getResourceBundle().getText("position")
+          },
+          {
+            "key": "IF25Cancel",
+            "text": this.getResourceBundle().getText("cancel2025"),
+            "group": this.getResourceBundle().getText("position")
+          },
+          {
+            "key": "IFOnHold",
+            "text": this.getResourceBundle().getText("onHold"),
             "group": this.getResourceBundle().getText("position")
           },
 
@@ -629,6 +647,9 @@ sap.ui.define([
         IFDkay: this.IFDkay,
         IFGy: this.IFGy,
         IFMerch: this.IFMerch,
+        IF24Cancel: this.IF24Cancel,
+        IF25Cancel: this.IF25Cancel,
+        IFOnHold: this.IFOnHold,
         IFMt: this.IFMt,
         IFMy: this.IFMy,
         IFStaj: this.IFStaj,
@@ -1346,6 +1367,10 @@ sap.ui.define([
       this.IFStaj = '';
       this.IFMerch = '';
       this.IFMt = '';
+      this.IF24Cancel = '';
+      this.IF25Cancel = '';
+      this.IFOnHold = '';
+
 
       this.IFAd1 = '';
       this.IFAd2 = '';
