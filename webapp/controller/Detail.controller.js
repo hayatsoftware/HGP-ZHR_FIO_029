@@ -77,6 +77,7 @@ sap.ui.define([
       this.getRouter().getRoute("master").attachPatternMatched(this._onObjectMatched, this);
       // this.getRouter().getRoute("detailDetail").attachPatternMatched(this._onObjectMatched, this); //detaildetail dee var
       this.getRouter().getRoute("master").attachPatternMatched(this._toggleFull, this);
+      this.getRouter().getRoute("master").attachPatternMatched(this._setFullScreen, this);
       this.setModel(oViewModel, "detailView");
 
       this.getOwnerComponent().getModel().metadataLoaded().then(this._onMetadataLoaded.bind(this));
@@ -217,8 +218,14 @@ sap.ui.define([
 
       });
 
+     
 
+     
       //oninitsonu
+    },
+
+    _setFullScreen: function(){
+       setTimeout(() => this._toggleFull(), 1000);
     },
 
     // ////////////////////detaildetailcontroller///////////////////start
