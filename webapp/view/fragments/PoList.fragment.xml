@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:f="sap.ui.layout.form"
+xmlns:commons="sap.suite.ui.commons">
+	<Dialog title="{i18n>records}" id="poListDialog" afterClose="onVariantDialogAfterClose" contentWidth="30rem">
+		<content>
+
+		<List
+			id="poList"
+			items="{/po_headerSet}"
+			includeItemInSelection="true">
+			<ObjectListItem
+					title="{Vartxt}"
+					type="DetailAndActive"
+					press="onPoListItemPress"
+					detailPress="handlePoDetailPress"
+					>
+									<!-- <markers>
+					<ObjectMarker type="{= ${Hide} === 'X' ?  'Locked'  : 'Draft' }" visibility="IconOnly"/>
+				</markers> -->
+					<firstStatus>
+						<ObjectStatus
+							title="{i18n>hidden}"
+							text="{= ${Hide} === 'X' ?  ${i18n>yes}  : ${i18n>no} }"
+							state="{= ${Hide} === 'X' ? 'Warning' : 'Success'}"
+						/>
+					</firstStatus>
+					<ObjectAttribute title="{i18n>DatumCr}" text="{path:'DatumCr',formatter:'.formatter.formatDate'}" />
+					<!-- <ObjectAttribute title="{i18n>DatumCh}" text="{path:'DatumCh',formatter:'.formatter.formatDate'}" /> -->
+				</ObjectListItem>	
+		</List>
+		</content>
+		<!-- sap.m.Button -->
+		<endButton><Button id="poListCancel" text="{i18n>close}" visible="true" type="Reject" iconFirst="true" press="closePoListDialog"/></endButton>
+		<!-- sap.m.Button -->
+		<buttons></buttons>
+		<!-- sap.m.Button -->
+	</Dialog>
+</core:FragmentDefinition>
+

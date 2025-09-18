@@ -23,6 +23,6 @@ builder:
           name: ZHR_FIO_029
           description: Organizasyon Şeması
           package: ZHR
-          transport: HGDK902304
+          transport: HGDK902376
         exclude:
           - /test/

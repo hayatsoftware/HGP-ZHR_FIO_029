@@ -11,7 +11,7 @@
 		showFooter="true"
 		busy="{detailView>/busy}"
 		busyIndicatorDelay="{detailView>/delay}"
-		floatingFooter="true">
+		floatingFooter="false">
 		  <subHeader>
 			<OverflowToolbar>
               <!-- <Toolbar width="100%" height="100px"> -->
@@ -87,9 +87,9 @@
 					id="graphTheme"
 					selectedKey="cool"
 					change=".onTheme">
-           <!-- <core:Item key="ana" text="{i18n>typeSimple}" /> -->
-          <core:Item key="olivia" text="{i18n>typeOlivia}" />	
-          <core:Item key="cool" text="{i18n>typeDetail}" />				
+					<!-- <core:Item key="ana" text="{i18n>typeSimple}" /> -->
+					<core:Item key="olivia" text="{i18n>typeOlivia}" />	
+					<core:Item key="cool" text="{i18n>typeDetail}" />				
 					<core:Item key="ula" text="{i18n>typeUla}" />
           
           
@@ -111,6 +111,8 @@
         </OverflowToolbar>
       </subHeader> 
   <content>	
+
+
 	<core:HTML class="sapUiMediumMarginTop" content='&lt;div style=&quot;width:100%; height:100%;&quot; id=&quot;orgchart&quot;/&gt;'>
      </core:HTML>
   </content>
@@ -119,14 +121,16 @@
 			  <Bar>
 	      <contentRight>
 				<!-- <Button  iconFirst="false" type="Ghost" press="._onUndoVariant" visible="true"/> -->
-				<Button  text="Kabul Et" iconFirst="false" type="Ghost" press="._onSaveVariant" visible="true"/>
+				<Button  id="saveVariantButton" text="{i18n>approve}" iconFirst="false" type="Ghost" press="._onSaveVariant" visible="false"/>
+				<Button  id="closeFooterButton" text="{i18n>cancel}" iconFirst="false" type="Ghost" press=".onCloseFooter" visible="false"/>
 					
 				</contentRight>
 			    <contentMiddle>
 					<tnt:InfoLabel visible="{myTxtModel>/isVisible}" id="text1" displayOnly="false" text="{Status}" />
 				</contentMiddle>
 	             <contentLeft>
-				     <Button type="Accept" text="Varyant Listesi" press="openVariant"/>
+				     <Button id="openVariantButton" type="Accept" text="Varyant Listesi" press="openVariant" visible="false"/>
+				     <Button id="openPoButton" type="Accept" text="{i18n>PoList}" press="openPrintOuts" visible="false"/>
 				 </contentLeft>
 		      </Bar>
 				
@@ -140,140 +144,3 @@
 </mvc:View>
 
 
-
-
-
-		<!-- <semantic:SemanticPage
-		id="detailPage"
-		busy="{detailView>/busy}"
-		busyIndicatorDelay="{detailView>/delay}">
-		<semantic:titleHeading>
-			<Title
-				text="{detailView>/title}"
-				level="H2"/>
-		</semantic:titleHeading>
-		<semantic:headerContent>
-			<Toolbar>
-               <ToggleButton icon="sap-icon://resize-horizontal" press="fullScreen" />
-				<Select
-					forceSelection="false"
-					id="graphLevel"
-					selectedKey="1"
-					change=".onLevel">
-					<core:Item key="1" text="{i18n>onelevel}" />
-					<core:Item key="2" text="{i18n>twolevel}" />
-					<core:Item key="3" text="{i18n>threelevel}" />				
-				</Select>
-
-				<Select
-					forceSelection="false"
-					id="graphType"
-					selectedKey="12"
-					change=".onType">
-          <core:Item key="2" text="{i18n>posChart}" />
-					<core:Item key="1" text="{i18n>orgChart}" />					
-					<core:Item key="12" text="{i18n>budChart}" />		
-					<core:Item key="3" text="{i18n>simChart}" />	
-				</Select>
-
-				<DatePicker
-					id="graphDate"
-					width="120px"
-					placeholder="{i18n>enterDate}"
-					change=".onDate"/>
-				
-				yorumm başlangıc
-				 <Select
-					forceSelection="false"
-					id="graphRoot"
-					selectedKey="50138326"
-					change=".onRoot">
-					<core:Item key="50138326" text="{i18n>domestic}" />
-					<core:Item key="50000251" text="{i18n>abroad}" />				
-				</Select> yorum bitiş
-				<MultiComboBox		
-					selectionFinish=".onYakaFilter"
-					selectionChange=".onYakaFilterChange"		
-					maxWidth="400px"
-					items="{
-						path: 'filterCBModel>/items',
-						sorter: {
-							path: 'group',
-							descending: false,
-							group: true
-						}
-					}"
-					selectedKeys="{
-						path: 'filterCBModel>/selected'
-					}" 
-					>
-				<core:Item key="{filterCBModel>key}" text="{filterCBModel>text}" />
-			</MultiComboBox>
-				<ToolbarSpacer/>
-          <Select
-            forceSelection="false"
-            id="chartLang"
-            selectedKey="TR"
-            change=".onLang">
-					<core:Item key="TR" text="TR" />
-					<core:Item key="EN" text="EN" />				
-				</Select>
-				<Select
-					forceSelection="false"
-					id="graphTheme"
-					selectedKey="cool"
-					change=".onTheme">
-          <core:Item key="cool" text="{i18n>typeDetail}" />
-					<core:Item key="ana" text="{i18n>typeSimple}" />
-					
-					yorum baslangıc
-					 <core:Item key="luba" text="luba" />
-					<core:Item key="olivia" text="olivia" />
-
-					<core:Item key="mery" text="mery" />
-					<core:Item key="diva" text="diva" />
-					<core:Item key="derek" text="derek" />
-					<core:Item key="belinda" text="belinda" />
-					<core:Item key="deborah" text="deborah" /> 
-					yorum bitiş
-
-				
-				</Select>
-			</Toolbar>
-
-		</semantic:headerContent>
-		<semantic:content>
-			<core:HTML content='&lt;div style=&quot;width:100%; height:100%;&quot; id=&quot;orgchart&quot;/&gt;'>
-
-			</core:HTML>
-
-
-		</semantic:content>
-		yorum baslangıc
-		 <semantic:closeAction>
-			<semantic:CloseAction
-					id="closeColumn"
-					press=".onCloseDetailPress"/>
-		</semantic:closeAction> 
-		yorum bitiş
-
-		<semantic:fullScreenAction>
-			<semantic:FullScreenAction
-					id="enterFullScreen"
-					visible="{= !${device>/system/phone} &amp;&amp; !${appView>/actionButtonsInfo/midColumn/fullScreen}}"
-					press=".toggleFullScreen"/>
-		</semantic:fullScreenAction>
-		<semantic:exitFullScreenAction>
-			<semantic:ExitFullScreenAction
-					id="exitFullScreen"
-					visible="{= !${device>/system/phone} &amp;&amp; ${appView>/actionButtonsInfo/midColumn/fullScreen}}"
-					press=".toggleFullScreen"/>
-		</semantic:exitFullScreenAction>
-		<semantic:positiveAction>
-			<semantic:PositiveAction press="._onSaveVariant"/>
-		</semantic:positiveAction>
-		<semantic:footerCustomActions>
-			<Button icon="sap-icon://undo" iconFirst="false" type="Ghost" press="._onUndoVariant" visible="false"> 
-			</Button>
-		</semantic:footerCustomActions>
-	</semantic:SemanticPage> -->

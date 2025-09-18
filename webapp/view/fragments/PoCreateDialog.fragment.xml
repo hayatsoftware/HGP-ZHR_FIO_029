@@ -1,0 +1,32 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:l="sap.ui.layout"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:f="sap.ui.layout.form"
+xmlns:commons="sap.suite.ui.commons"
+id="prCreateFragment">
+  <Dialog id="newPrintOut" title="{i18n>newCard}" afterClose="onPoCreateDialogAfterClose"  contentHeight="13rem">
+	 <content>
+           <f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+				singleContainerFullSize="false">
+      <f:content>
+                <Label text="{i18n>cardName}"/>
+		        <VBox>
+                  <Input id="VarTxt" value="{path:'poCreateDialogModel>/Vartxt'}" maxLength="100"/>
+                </VBox>
+		  	    <Label text="Gizli"/>
+       		    <Switch id="PoHide" class="sapUiSmallMarginEnd" state="{= ${poCreateDialogModel>/Hide} === 'X' ? true : false }"> </Switch>
+      </f:content>
+		   </f:SimpleForm>
+    </content>
+		<!-- sap.ui.core.Control -->
+		<beginButton><Button id="po_save" text="Kaydet" type="Accept" visible="true" press="._handlePoSavePress"/></beginButton>
+		<!-- sap.m.Button -->
+		<endButton><Button id="po_cancel" text="İptal" visible="true" press="._handlePoCancelPress"/></endButton>
+		<!-- sap.m.Button -->
+		<buttons></buttons>
+		<!-- sap.m.Button -->
+	</Dialog>
+</core:FragmentDefinition>
